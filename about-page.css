@@ -1,0 +1,34 @@
+/* styles.css */
+
+/* General text improvements */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, h2 {
+  font-weight: 700;
+}
+
+/* Section hover effect */
+section:hover {
+  background-color: #f1f5f9;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+/* Icons */
+ion-icon {
+  transition: transform 0.2s ease;
+}
+
+section:hover ion-icon {
+  transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
