@@ -1,17 +1,21 @@
-/* styles.css */
 
-/* General text improvements */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
+ 
 }
 
 /* Headings */
+h1{
+    font-size: 2rem;
+    color: #fefffd; 
+    margin-bottom: 0.5rem;
+}
 h1, h2 {
   font-weight: 700;
 }
 
-/* Section hover effect */
+
 section:hover {
   background-color: #f1f5f9;
   transition: background-color 0.3s ease-in-out;
@@ -27,8 +31,35 @@ section:hover ion-icon {
   transform: scale(1.2);
 }
 
-/* Footer */
+
 footer {
   font-size: 0.9rem;
   letter-spacing: 0.5px;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+  }
+  
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .menu {
+  display: flex;
 }

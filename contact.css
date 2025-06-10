@@ -1,0 +1,18 @@
+body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5; /* Light Gray */
+            color: #212121; /* Dark text for readability */
+        }
+        /* Custom color definitions for Tailwind */
+        .bg-deep-teal {
+             background-color: #004D40; }
+        .text-deep-teal { 
+            color: #004D40; }
+        .bg-vibrant-orange { 
+            background-color: #FF9800; }
+        .text-vibrant-orange { 
+            color: #FF9800; }
+        .bg-muted-plum { 
+            background-color: #673AB7; } /* For potential secondary accents */
+        .placeholder-gray-500::placeholder { 
+            color: #6B7280; } /* Tailwind default placeholder color for better contrast */
