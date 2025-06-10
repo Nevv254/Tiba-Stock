@@ -112,6 +112,11 @@
     let slideIndex = 0;
     const slides = document.querySelector('.carousel-slide');
     const totalSlides = slides.children.length;
+    
+    setInterval(() => {
+      slideIndex = (slideIndex + 1) % totalSlides;
+      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
+    }, 10000); // Change slide every 10 seconds
 
     // Simulated inventory list
     const items = ["Paracetamol", "Insulin", "IV Fluids", "Antibiotics", "Malaria Test Kits", "Vitamin B Complex"];
