@@ -1,0 +1,74 @@
+/* emergency.css */
+
+/* Smooth fade-in animations */
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slide in from bottom */
+.slide-up {
+  animation: slideUp 0.7s ease-in-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hover button effects */
+.btn-primary:hover {
+  background-color: #2563eb;
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+  background-color: #1e40af;
+  transform: scale(1.02);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Form input focus effect */
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+}
+
+/* Success message styling */
+.success-message {
+  background-color: #d1fae5;
+  color: #065f46;
+  border-left: 4px solid #10b981;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  display: none;
+}
+
+/* Responsive image banner */
+.emergency-banner {
+  background-image: url('https://images.unsplash.com/photo-1576765607924-d21439e36c46');
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  position: relative;
+}
+
+.emergency-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}

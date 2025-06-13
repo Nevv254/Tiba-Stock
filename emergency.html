@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Request | TibaStock</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="emergency.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+   <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <div class="flex items-center text-blue-800 font-bold text-xl">
+        <ion-icon name="medkit-outline" class="mr-2 text-2xl"></ion-icon>
+        TibaStock
+      </div>
+      <div class="hidden md:flex md:space-x-8 items-center">
+          <a href="index.html" class="flex items-center text-gray-600 hover:text-blue-800 text-sm font-medium">
+            <ion-icon name="home-outline" class="mr-1"></ion-icon> Home
+          </a>
+          <a href="about-Page.html" class="flex items-center text-gray-600 hover:text-blue-800 text-sm font-medium">
+            <ion-icon name="information-circle-outline" class="mr-1"></ion-icon> About
+          </a>
+          <div class="relative group">
+            <button class="flex items-center text-gray-600 hover:text-blue-800 text-sm font-medium">
+              <ion-icon name="cube-outline" class="mr-1"></ion-icon> Inventory
+              <ion-icon name="chevron-down-outline" class="ml-1"></ion-icon>
+            </button>
+            <div class="absolute left-0 mt-2 w-40 bg-white shadow-lg rounded-md hidden group-hover:block z-50">
+              <a href="inventory.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Inventory</a>
+              <a href="stock-alerts.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50">Stock
+                Alerts</a>
+            </div>
+          </div>
+          <a href="emergency.html" class="flex items-center text-blue-800 border-b-2 border-blue-600 text-sm font-medium">
+            <ion-icon name="alert-circle-outline" class="mr-1"></ion-icon> Emergency Requests
+          </a>
+          <a href="contact.html" class="flex items-center text-gray-600 hover:text-blue-800 text-sm font-medium">
+            <ion-icon name="mail-outline" class="mr-1"></ion-icon> Contact
+          </a>
+        </div>
+  </nav>
+
+  <!-- Hero Banner -->
+  <header class="emergency-banner relative flex items-center justify-center text-white bg-blue-800 h-64 md:h-80">
+    <div class="text-center z-10">
+      <h1 class="text-3xl md:text-4xl font-bold slide-up">Request Emergency Medical Supplies</h1>
+      <p class="mt-2 text-lg slide-up">Fast-track urgent requests to nearby facilities or suppliers.</p>
+    </div>
+  </header>
+
+  <!-- Emergency Request Form -->
+  <section class="max-w-3xl mx-auto py-10 px-4 fade-in">
+    <h2 class="text-2xl font-semibold text-blue-800 text-center slide-up">Fill the Request Form</h2>
+    <form class="bg-white shadow-md rounded-lg p-6 mt-6 space-y-6">
+      <div>
+        <label class="block font-medium mb-1">Facility Name</label>
+        <input type="text" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="e.g., Nairobi Central Clinic" required />
+      </div>
+      <div>
+        <label class="block font-medium mb-1">Medical Item</label>
+        <input type="text" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="e.g., IV Fluids" required />
+      </div>
+      <div>
+        <label class="block font-medium mb-1">Quantity Needed</label>
+        <input type="number" class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300" placeholder="e.g., 50" required />
+      </div>
+      <div>
+        <label class="block font-medium mb-1">Urgency Level</label>
+        <select class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300">
+          <option>Critical</option>
+          <option>High</option>
+          <option>Moderate</option>
+        </select>
+      </div>
+      <div>
+        <label class="block font-medium mb-1">Additional Notes</label>
+        <textarea class="w-full border px-4 py-2 rounded focus:outline-none focus:ring focus:ring-blue-300" rows="4" placeholder="Any additional info..."></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn-primary bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Submit Request</button>
+      </div>
+    </form>
+
+    <!-- Success Message Placeholder -->
+    <div class="success-message" id="successMessage">
+      ✅ Your emergency request has been submitted successfully.
+    </div>
+  </section>
+
+  <script>
+    // Simulate success message on submit
+    const form = document.querySelector("form");
+    const message = document.getElementById("successMessage");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      message.style.display = "block";
+      setTimeout(() => {
+        message.style.display = "none";
+        form.reset();
+      }, 4000);
+    });
+  </script>
+
+   <!-- Ionicons CDN for icons -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
