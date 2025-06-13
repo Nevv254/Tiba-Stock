@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="index.css">
 </head>
 <body class="bg-gray-50 text-gray-800">
+ 
   <!-- Navbar -->
   <nav class="bg-white shadow sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
@@ -43,8 +44,8 @@
         </div>
   </nav>
 
-  <!-- Hero Section with Carousel -->
-  <section class="relative w-full overflow-hidden">
+  <!-- Hero Section with Carousel --> 
+ <section class="relative w-full overflow-hidden">
     <div class="carousel-slide flex w-[300%] transition-transform duration-700 ease-in-out">
       <div class="relative w-full h-72">
         <img src="Assets\2150359117.webp" class="w-full h-full object-cover" alt="Slide 1">
@@ -82,14 +83,7 @@
     <button class="ml-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Search</button>
   </section>
 
-  <!-- Live Inventory Snapshot -->
-  <section class="px-4 py-8">
-    <h3 class="text-xl font-semibold text-blue-800 mb-4 text-center">Trending & Critical Items</h3>
-    <div id="inventoryList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <!-- Dynamic inventory items will appear here -->
-    </div>
-  </section>
-
+ 
   <!-- Call to Action -->
   <section class="text-center py-8">
     <h3 class="text-lg font-semibold mb-2">Ready to get started?</h3>
@@ -97,8 +91,39 @@
     <button class="cta-secondary ml-4 bg-gray-100 text-blue-600 px-6 py-2 rounded-md hover:bg-gray-200">Request a Demo</button>
   </section>
 
+  <!-- Live Inventory Snapshot (Static) -->
+<section class="px-4 py-8 bg-white rounded-lg shadow-md">
+  <h3 class="text-xl font-semibold text-blue-800 mb-4 text-center slide-up">Trending & Critical Items</h3>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div class="bg-white p-4 rounded shadow hover:shadow-lg transition duration-300 slide-up">
+      <h4 class="font-semibold text-lg">Paracetamol</h4>
+      <p class="text-sm text-green-600">In stock</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow hover:shadow-lg transition duration-300 slide-up">
+      <h4 class="font-semibold text-lg">Insulin</h4>
+      <p class="text-sm text-red-600">Low in stock</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow hover:shadow-lg transition duration-300 slide-up">
+      <h4 class="font-semibold text-lg">IV Fluids</h4>
+      <p class="text-sm text-green-600">In stock</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow hover:shadow-lg transition duration-300 slide-up">
+      <h4 class="font-semibold text-lg">Antibiotics</h4>
+      <p class="text-sm text-red-600">Low in stock</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow hover:shadow-lg transition duration-300 slide-up">
+      <h4 class="font-semibold text-lg">Malaria Test Kits</h4>
+      <p class="text-sm text-green-600">In stock</p>
+    </div>
+    <div class="bg-white p-4 rounded shadow hover:shadow-lg transition duration-300 slide-up">
+      <h4 class="font-semibold text-lg">Vitamin B Complex</h4>
+      <p class="text-sm text-red-600">Low in stock</p>
+    </div>
+  </div>
+</section>
+
   <!-- Footer -->
-  <footer class="bg-white mt-12 py-6 text-center text-sm text-gray-600">
+  <footer class="bg-blue-800 text-white p-4 text-center mt-auto shadow-inner">
     <p>&copy; 2025 TibaStock. All rights reserved.</p>
     <div class="mt-2 space-x-4">
       <a href="about.html">About</a>
@@ -107,27 +132,6 @@
     </div>
   </footer>
 
-  <script>
-    // Carousel logic
-    let slideIndex = 0;
-    const slides = document.querySelector('.carousel-slide');
-    const totalSlides = slides.children.length;
-    
-    setInterval(() => {
-      slideIndex = (slideIndex + 1) % totalSlides;
-      slides.style.transform = `translateX(-${slideIndex * 100}%)`;
-    }, 10000); // Change slide every 10 seconds
-
-    // Simulated inventory list
-    const items = ["Paracetamol", "Insulin", "IV Fluids", "Antibiotics", "Malaria Test Kits", "Vitamin B Complex"];
-    const list = document.getElementById("inventoryList");
-
-    items.forEach(item => {
-      const div = document.createElement("div");
-      div.className = "bg-white p-4 rounded shadow hover:shadow-lg transition duration-300";
-      div.innerHTML = `<h4 class='font-semibold text-lg'>${item}</h4><p class='text-sm text-red-600'>Low in stock</p>`;
-      list.appendChild(div);
-    });
-  </script>
+  
 </body>
 </html>
