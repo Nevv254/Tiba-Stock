@@ -1,19 +1,86 @@
+/* index.css */
 
-    
- 
-    /* .slide-up {
-      animation: slideUp 10s ease-in-out;
-    }
-    @keyframes slideUp {
-      0% {
-        transform: translateY(20px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-    .slide-down {
-      animation: slideDown 10s ease-in-out;
-    } */
+/* Global smooth font and animation */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Slide-up animation for inventory cards */
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button hover animations */
+button.cta-primary,
+button.cta-secondary {
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button.cta-primary:hover,
+button.cta-secondary:hover {
+  transform: scale(1.05);
+}
+
+/* Search input styling */
+#searchInput {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+  outline: none;
+}
+
+/* Inventory cards on hover */
+.grid > div:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+
+/* Navbar dropdown enhancement */
+nav .group:hover .group-hover\\:block {
+  display: block !important;
+}
+/* Navbar link hover effect */
+nav a {
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+nav a:hover {
+  color: #2563eb;
+}
+/* Footer styling */
+footer {
+  background-color: #1e40af;
+  color: #d1d5db;
+  padding: 2rem;
+  text-align: center;
+}
+/* Footer link styling */ 
+footer a {
+  color: #d1d5db;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+/* Footer link hover */
+footer a {
+  color: #d1d5db;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory | TibaStock</title>
+  <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
+      <div class="flex items-center text-blue-800 font-bold text-xl">
+        <ion-icon name="medkit-outline" class="mr-2 text-2xl"></ion-icon>
+        TibaStock
+      </div>
+      <div class="hidden md:flex md:space-x-8 items-center">
+        <a href="index.html" class="text-gray-600 hover:text-blue-800 text-sm font-medium flex items-center">
+          <ion-icon name="home-outline" class="mr-1"></ion-icon> Home
+        </a>
+        <a href="about-Page.html" class="text-gray-600 hover:text-blue-800 text-sm font-medium flex items-center">
+          <ion-icon name="information-circle-outline" class="mr-1"></ion-icon> About
+        </a>
+    
+        <a href="inventory.html" class="text-blue-800 border-b-2 border-blue-600 text-sm font-medium flex items-center">
+          <ion-icon name="cube-outline" class="mr-1"></ion-icon> Inventory
+        </a>
+        <a href="emergency.html" class="text-gray-600 hover:text-blue-800 text-sm font-medium flex items-center">
+          <ion-icon name="alert-circle-outline" class="mr-1"></ion-icon> Emergency Requests
+        </a>
+        <a href="contact.html" class="text-gray-600 hover:text-blue-800 text-sm font-medium flex items-center">
+          <ion-icon name="mail-outline" class="mr-1"></ion-icon> Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Title -->
+  <header class="bg-blue-100 text-center py-6">
+    <h1 class="text-2xl font-bold text-blue-900">Medical Inventory Dashboard</h1>
+    <p class="text-gray-600 mt-1">View and manage your current stock levels</p>
+  </header>
+
+  <!-- Search and Filter -->
+  <section class="max-w-6xl mx-auto px-4 py-6">
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+      <input type="text" placeholder="Search medicine..." class="w-full sm:w-1/2 px-4 py-2 border rounded-md focus:ring-2 focus:ring-blue-400" />
+      <button onclick="openModal('addModal')" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">Add New Item</button>
+    </div>
+  </section>
+
+  <!-- Inventory Table -->
+  <section class="max-w-6xl mx-auto px-4 pb-10 overflow-x-auto">
+    <table class="min-w-full bg-white border rounded-lg shadow-md">
+      <thead class="bg-blue-600 text-white">
+        <tr>
+          <th class="py-3 px-4 text-left">Item</th>
+          <th class="py-3 px-4 text-left">Category</th>
+          <th class="py-3 px-4 text-center">Quantity</th>
+          <th class="py-3 px-4 text-center">Status</th>
+          <th class="py-3 px-4 text-center">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">Paracetamol</td>
+          <td class="py-3 px-4">Pain Relief</td>
+          <td class="py-3 px-4 text-center">120</td>
+          <td class="py-3 px-4 text-center text-green-600">In Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">Amoxicillin</td>
+          <td class="py-3 px-4">Antibiotic</td>
+          <td class="py-3 px-4 text-center">50</td>
+          <td class="py-3 px-4 text-center text-yellow-600">Low Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">Insulin</td>
+          <td class="py-3 px-4">Diabetes</td>
+          <td class="py-3 px-4 text-center">0</td>
+          <td class="py-3 px-4 text-center text-red-600">Out of Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">IV Fluids</td>
+          <td class="py-3 px-4">Infusion</td>
+          <td class="py-3 px-4 text-center">200</td>
+          <td class="py-3 px-4 text-center text-green-600">In Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">Malaria Test Kits</td>
+          <td class="py-3 px-4">Diagnostics</td>
+          <td class="py-3 px-4 text-center">75</td>
+          <td class="py-3 px-4 text-center text-green-600">In Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">Vitamin B Complex</td>
+          <td class="py-3 px-4">Supplements</td>
+          <td class="py-3 px-4 text-center">30</td>
+          <td class="py-3 px-4 text-center text-yellow-600">Low Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+        <tr class="hover:bg-blue-50">
+          <td class="py-3 px-4">Bandages</td>
+          <td class="py-3 px-4">First Aid</td>
+          <td class="py-3 px-4 text-center">500</td>
+          <td class="py-3 px-4 text-center text-green-600">In Stock</td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="openModal('editModal')" class="text-blue-600 hover:underline">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Add Modal -->
+  <div id="addModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+      <h3 class="text-lg font-semibold mb-4 text-blue-800">Add New Item</h3>
+      <form>
+        <input type="text" placeholder="Item Name" class="w-full mb-3 px-3 py-2 border rounded" />
+        <input type="text" placeholder="Category" class="w-full mb-3 px-3 py-2 border rounded" />
+        <input type="number" placeholder="Quantity" class="w-full mb-3 px-3 py-2 border rounded" />
+        <select class="w-full mb-4 px-3 py-2 border rounded">
+          <option value="">Select Status</option>
+          <option>In Stock</option>
+          <option>Low Stock</option>
+          <option>Out of Stock</option>
+        </select>
+        <div class="flex justify-end space-x-3">
+          <button type="button" onclick="closeModal('addModal')" class="px-4 py-2 text-gray-600 hover:underline">Cancel</button>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+    <div class="bg-white rounded-lg shadow-lg p-6 w-96">
+      <h3 class="text-lg font-semibold mb-4 text-blue-800">Edit Item</h3>
+      <form>
+        <input type="text" value="Paracetamol" class="w-full mb-3 px-3 py-2 border rounded" />
+        <input type="text" value="Pain Relief" class="w-full mb-3 px-3 py-2 border rounded" />
+        <input type="number" value="120" class="w-full mb-3 px-3 py-2 border rounded" />
+        <select class="w-full mb-4 px-3 py-2 border rounded">
+          <option>In Stock</option>
+          <option>Low Stock</option>
+          <option>Out of Stock</option>
+        </select>
+        <div class="flex justify-end space-x-3">
+          <button type="button" onclick="closeModal('editModal')" class="px-4 py-2 text-gray-600 hover:underline">Cancel</button>
+          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-blue-800 text-white p-4 text-center">
+    <p>&copy; 2025 TibaStock. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal Script -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.remove('hidden');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+  </script>
+   
+   <!-- Tailwind and Ionicons -->
+<script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.js"></script>
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+</body>
+</html>
