@@ -70,5 +70,12 @@ The contact form in `contact.html` is currently a static HTML form. For it to se
 * **Forms**Modal forms for adding, editing, and viewing stock 
 
 ## Future Enhancements (Suggestions)
+* **AI-driven supply forecasting**
+* **Integration with suppliers' systems**
+* **Mobile app version**
+
+
+
+
 
 
